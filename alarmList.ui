@@ -194,19 +194,30 @@ color: rgb(255, 255, 255);</string>
            <verstretch>1</verstretch>
           </sizepolicy>
          </property>
-         <widget class="QLabel" name="label_9">
-          <property name="geometry">
-           <rect>
-            <x>320</x>
-            <y>10</y>
-            <width>67</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_9">
+            <property name="font">
+             <font>
+              <pointsize>19</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(36, 31, 49);</string>
+            </property>
+            <property name="text">
+             <string>Alarms</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::AutoText</enum>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
        <item>
@@ -341,7 +352,7 @@ color: rgb(255, 255, 255);
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>../.designer/Desktop/SterilizationDB/Code/UI/src/icons/done.png</normaloff>../.designer/Desktop/SterilizationDB/Code/UI/src/icons/done.png</iconset>
+                 <normaloff>UI/done.png</normaloff>UI/done.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -365,6 +376,142 @@ color: rgb(255, 255, 255);
            <verstretch>3</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius: 5;
+background-color: rgb(255, 255, 255);</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QWidget" name="widget_17" native="true">
+            <layout class="QGridLayout" name="gridLayout_9">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_7">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Time: 9:30am</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_14" native="true">
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_5">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Extreme: X</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_15" native="true">
+            <layout class="QGridLayout" name="gridLayout_8">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_6">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Lights: Yes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_19" native="true">
+            <layout class="QGridLayout" name="gridLayout_12">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_8">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Voice: On</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_16" native="true">
+            <layout class="QGridLayout" name="gridLayout_11">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="btnPass_2">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>161</width>
+                 <height>51</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius:6px;
+border-style: solid;
+border-style: inset;
+border-width: 1.5px;
+border-color: rgb(22, 39, 95);
+color: rgb(255, 255, 255);
+background-color: rgb(255, 255, 255);
+background-color: rgb(135, 206, 235);
+background-color: rgb(72, 209, 204);
+background-color: rgb(100, 149, 237);
+background-color: rgb(22, 39, 95);
+
+border-color: rgb(211, 211, 211);
+border-color: rgb(234, 0, 49);
+color: rgb(255, 255, 255);
+/*color: rgb(0, 166, 118);*/
+
+</string>
+               </property>
+               <property name="text">
+                <string>  Inactive</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>UI/error.png</normaloff>UI/error.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
        <item>
@@ -375,6 +522,142 @@ color: rgb(255, 255, 255);
            <verstretch>3</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius: 5;
+background-color: rgb(255, 255, 255);</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QWidget" name="widget_22" native="true">
+            <layout class="QGridLayout" name="gridLayout_14">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_10">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Time: 9:30am</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_23" native="true">
+            <layout class="QGridLayout" name="gridLayout_15">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_11">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Extreme: X</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_25" native="true">
+            <layout class="QGridLayout" name="gridLayout_17">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_13">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Lights: Yes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_24" native="true">
+            <layout class="QGridLayout" name="gridLayout_16">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_12">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Voice: On</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_20" native="true">
+            <layout class="QGridLayout" name="gridLayout_13">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="btnPass_3">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>161</width>
+                 <height>51</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius:6px;
+border-style: solid;
+border-style: inset;
+border-width: 1.5px;
+border-color: rgb(22, 39, 95);
+color: rgb(255, 255, 255);
+background-color: rgb(255, 255, 255);
+background-color: rgb(135, 206, 235);
+background-color: rgb(72, 209, 204);
+background-color: rgb(100, 149, 237);
+background-color: rgb(22, 39, 95);
+
+border-color: rgb(211, 211, 211);
+border-color: rgb(234, 0, 49);
+color: rgb(255, 255, 255);
+/*color: rgb(0, 166, 118);*/
+
+</string>
+               </property>
+               <property name="text">
+                <string>  Inactive</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>UI/error.png</normaloff>UI/error.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
        <item>
@@ -385,6 +668,142 @@ color: rgb(255, 255, 255);
            <verstretch>3</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius: 5;
+background-color: rgb(255, 255, 255);</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QWidget" name="widget_27" native="true">
+            <layout class="QGridLayout" name="gridLayout_19">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_14">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Time: 9:30am</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_28" native="true">
+            <layout class="QGridLayout" name="gridLayout_20">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_15">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Extreme: X</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_30" native="true">
+            <layout class="QGridLayout" name="gridLayout_22">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_17">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Lights: Yes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_29" native="true">
+            <layout class="QGridLayout" name="gridLayout_21">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_16">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(36, 31, 49);</string>
+               </property>
+               <property name="text">
+                <string>Voice: On</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_26" native="true">
+            <layout class="QGridLayout" name="gridLayout_18">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="btnPass_4">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>161</width>
+                 <height>51</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius:6px;
+border-style: solid;
+border-style: inset;
+border-width: 1.5px;
+border-color: rgb(22, 39, 95);
+color: rgb(255, 255, 255);
+background-color: rgb(255, 255, 255);
+background-color: rgb(135, 206, 235);
+background-color: rgb(72, 209, 204);
+background-color: rgb(100, 149, 237);
+background-color: rgb(22, 39, 95);
+
+border-color: rgb(211, 211, 211);
+border-color: rgb(234, 0, 49);
+color: rgb(255, 255, 255);
+/*color: rgb(0, 166, 118);*/
+
+</string>
+               </property>
+               <property name="text">
+                <string>  Inactive</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>UI/error.png</normaloff>UI/error.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
        <item>
