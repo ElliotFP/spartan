@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>925</width>
     <height>600</height>
    </rect>
   </property>
@@ -152,7 +152,7 @@ color: rgb(255, 255, 255);</string>
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>../Desktop/SterilizationDB/Code/UI/src/icons/icons8-broadcasting-96.png</normaloff>../Desktop/SterilizationDB/Code/UI/src/icons/icons8-broadcasting-96.png</iconset>
+                <normaloff>UI/editProfile.png</normaloff>UI/editProfile.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -175,8 +175,8 @@ color: rgb(255, 255, 255);</string>
       <widget class="QWidget" name="widget_3" native="true">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>110</y>
+         <x>50</x>
+         <y>80</y>
          <width>120</width>
          <height>41</height>
         </rect>

@@ -19,7 +19,6 @@ widget = QStackedWidget()
 widget.addWidget(MainWindow())
 # widget.setWindowIcon(logo_icon)
 widget.setWindowTitle('SPARTAN')
-# widget.show()
 widget.showMaximized()
 
 app.exec()
