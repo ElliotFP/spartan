@@ -2,7 +2,12 @@ import sys
 import cv2
 import mediapipe as mp
 import numpy as np
+import pygame   
+import os
 from PushUpCounter import PushUpCounter
+
+pygame.init() # initialize pygame
+
 
 extreme_mode = sys.argv[1] # 0 for normal, 1 for extreme
 print("extreme_mode is" + extreme_mode)
@@ -18,12 +23,34 @@ print("alarm_sound is " + alarm_sound)
 speech_text = sys.argv[6] # string for text to speech
 print("speech_text is " + speech_text)
 
-if (extreme_mode): # code for running the PushupCounter.py script
-    num_pushups = int(sys.argv[7]) # int for number of pushups
-    print("extreme mode")
+if (alarm_sound != ""):
+    print("alarm sound is " + alarm_sound)
+    
+    # play alarm sound
+    if (os.path.isfile(alarm_sound)):
+        song = pygame.mixer.Sound(alarm_sound)
+        song.play()
+    #elif (os.path.isdir(alarm_sound)):
+    #    print("alarm sound is a directory")
 
-    PushUpCounter.start_pushup_counter(num_pushups)
+        # play all .mp3 files in directory
+        
+
+    if extreme_mode:
+        print("extreme mode")
+        num_pushups = int(sys.argv[7]) # int for number of pushups
+        PushUpCounter.start_pushup_counter(num_pushups)
+        
+        # stop alarm sound
+        song.stop()
+
+# Lights Section
+
+if (lights_brightness > 0):
+    print("lights on")
+    if lights_mode == 0:
+        print("lights mode is solid")
+        
+
 else:
-    print("normal mode")
-
-
+    print("no alarm sound")

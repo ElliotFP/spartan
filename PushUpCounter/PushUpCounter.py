@@ -4,12 +4,6 @@ import mediapipe as mp
 import numpy as np
 from PushUpCounter import PoseModule
 
-# pushup_counter.py
-import cv2
-import mediapipe as mp
-import numpy as np
-from PushUpCounter import PoseModule
-
 def start_pushup_counter(target_pushups=10):  # Default target is 10 push-ups
     cap = cv2.VideoCapture(1)
     detector = PoseModule.poseDetector()
@@ -20,6 +14,9 @@ def start_pushup_counter(target_pushups=10):  # Default target is 10 push-ups
 
     while cap.isOpened():
         ret, img = cap.read()
+        width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))   # Convert width to int
+        height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))  # Convert height to int
+
         if not ret:
             print("Failed to grab frame")
             break  # Exit if no frame is grabbed
@@ -65,23 +62,31 @@ def start_pushup_counter(target_pushups=10):  # Default target is 10 push-ups
                 print("Target push-ups reached!")
                 break
 
-                #Draw Bar
+        # Draw the progress bar on the right
+        bar_thickness = 20  # You can adjust the thickness of the bar
+        bar_length = int(height * 0.75)  # 75% of the height of the frame
+        bar_start_x = int(width * 0.95)  # Start at 95% of the width of the frame
+        bar_end_x = bar_start_x + bar_thickness
         if form == 1:
-            cv2.rectangle(img, (580, 50), (600, 380), (0, 255, 0), 3)
-            cv2.rectangle(img, (580, int(bar)), (600, 380), (0, 255, 0), cv2.FILLED)
-            cv2.putText(img, f'{int(per)}%', (565, 430), cv2.FONT_HERSHEY_PLAIN, 2,
-                        (255, 0, 0), 2)
+            cv2.rectangle(img, (bar_start_x, int(height * 0.1)), (bar_end_x, int(height * 0.1 + bar_length)), (255,255,255), 3)
+            cv2.rectangle(img, (bar_start_x, int(bar)), (bar_end_x, int(height * 0.1 + bar_length)), (255,255,255), cv2.FILLED)
+            cv2.putText(img, f'{int(per)}%', (bar_start_x - 100, int(height * 0.1 + bar_length + 60)), cv2.FONT_HERSHEY_COMPLEX, 2, (255,255,255), 2)
+
+        # Move the push-up counter to the bottom left
+        counter_size = 5  # Font size for the counter
+        counter_thickness = 5  # Thickness of the font
+        counter_text = str(int(count))
+        (text_width, text_height), _ = cv2.getTextSize(counter_text, cv2.FONT_HERSHEY_COMPLEX, counter_size, counter_thickness)
+        cv2.rectangle(img, (0, int(height - text_height - 20)), (20 + text_width, int(height +20)), (245,247,255), cv2.FILLED)
+        cv2.putText(img, counter_text, (10, int(height - 10)), cv2.FONT_HERSHEY_COMPLEX, counter_size, (46, 64, 87), counter_thickness)
+
+        # Feedback - keep it at the top right or move as desired rgb(245,247,255) rgb(46,64,87)
+        feedback_pos_x = 500  # X coordinate for feedback text
+        feedback_pos_y = 40   # Y coordinate for feedback text
+        cv2.rectangle(img, (feedback_pos_x, 0), (832, feedback_pos_y +20), (245,247,255), cv2.FILLED)
+        cv2.putText(img, feedback, (feedback_pos_x+8, feedback_pos_y+8), cv2.FONT_HERSHEY_COMPLEX, 2, (46, 64, 87), 2)
 
 
-        #Pushup counter
-        cv2.rectangle(img, (0, 380), (100, 480), (0, 255, 0), cv2.FILLED)
-        cv2.putText(img, str(int(count)), (25, 455), cv2.FONT_HERSHEY_PLAIN, 5,
-                    (255, 0, 0), 5)
-        
-        #Feedback 
-        cv2.rectangle(img, (500, 0), (640, 40), (255, 255, 255), cv2.FILLED)
-        cv2.putText(img, feedback, (500, 40 ), cv2.FONT_HERSHEY_PLAIN, 2,
-                    (0, 255, 0), 2)
 
         cv2.imshow('Pushup counter', img)
         if cv2.waitKey(10) & 0xFF == ord('q'):
