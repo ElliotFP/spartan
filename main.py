@@ -9,8 +9,17 @@ from PyQt6 import uic
 from PyQt6.QtCore import QThread, pyqtSignal
 
 
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi('main.ui', self)
+
 app = QApplication(sys.argv)
 widget = QStackedWidget()
-widget.addWidget(sterilizationWindow)
-widget.setWindowIcon(logo_icon)
-widget.setWindowTitle('Sterilization DB')
+widget.addWidget(MainWindow())
+# widget.setWindowIcon(logo_icon)
+widget.setWindowTitle('SPARTAN')
+# widget.show()
+widget.showMaximized()
+
+app.exec()
