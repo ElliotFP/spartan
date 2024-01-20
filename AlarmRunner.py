@@ -30,11 +30,10 @@ if (alarm_sound != ""):
     if (os.path.isfile(alarm_sound)):
         song = pygame.mixer.Sound(alarm_sound)
         song.play()
-    #elif (os.path.isdir(alarm_sound)):
-    #    print("alarm sound is a directory")
+    elif (os.path.isdir(alarm_sound)):
+        print("alarm sound is a directory")
 
         # play all .mp3 files in directory
-        
 
     if extreme_mode:
         print("extreme mode")
