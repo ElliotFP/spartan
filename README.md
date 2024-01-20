@@ -38,7 +38,7 @@ We are running our code on an orange pi, with an OV13850 camera, a 512 SSD and a
 Pip libraries:
 - PyQt6
 - bleak
-- sys
 - mediapipe
 - govee-H613-BTcontroller
 - opencv-python
+- pygame

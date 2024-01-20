@@ -359,7 +359,7 @@ Colors: Red, Green</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Voice: On</string>
+                <string>Voice: Hello</string>
                </property>
               </widget>
              </item>
