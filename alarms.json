@@ -1,0 +1,30 @@
+{
+  "numberOfAlarms": 3,
+  "0": {
+    "time": "08:00:00",
+    "extreme": 3,
+    "colors": ["red"],
+    "brightness": 100,
+    "music": "music_file.mp3",
+    "speech": "Get Ready!",
+    "active": false
+  },
+  "1": {
+    "time": "07:00:00",
+    "extreme": 8,
+    "colors": ["blue"],
+    "brightness": 60,
+    "music": "music_file.mp3",
+    "speech": "Get Ready!",
+    "active": true
+  },
+  "2": {
+    "time": "09:00:00",
+    "extreme": 15,
+    "colors": ["green"],
+    "brightness": 130,
+    "music": "music_file.mp3",
+    "speech": "Get Ready!",
+    "active": false
+  }
+}
