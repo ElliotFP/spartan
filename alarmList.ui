@@ -235,10 +235,37 @@ background-color: rgb(255, 255, 255);</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
+           <widget class="QWidget" name="widget_32" native="true"/>
+          </item>
+          <item>
            <widget class="QWidget" name="widget_9" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout">
              <item row="0" column="0">
               <widget class="QLabel" name="label">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -252,6 +279,12 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_10" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <layout class="QGridLayout" name="gridLayout_3">
              <item row="0" column="0">
               <widget class="QLabel" name="label_2">
@@ -259,7 +292,7 @@ background-color: rgb(255, 255, 255);</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Extreme: X</string>
+                <string>Extreme: 10</string>
                </property>
               </widget>
              </item>
@@ -268,6 +301,24 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_11" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_4">
              <item row="0" column="0">
               <widget class="QLabel" name="label_3">
@@ -275,7 +326,9 @@ background-color: rgb(255, 255, 255);</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Lights: Yes</string>
+                <string>Music: No
+Brigtness: 100
+Colors: Red, Green</string>
                </property>
               </widget>
              </item>
@@ -284,6 +337,12 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_12" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <layout class="QGridLayout" name="gridLayout_5">
              <item row="0" column="0">
               <widget class="QLabel" name="label_4">
@@ -365,6 +424,51 @@ color: rgb(255, 255, 255);
             </layout>
            </widget>
           </item>
+          <item>
+           <widget class="QToolButton" name="btnDelete">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>1</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(234, 0, 49);
+border-style: solid;
+border-width:1px;
+border-radius:10px;
+border-color: rgb(0, 0, 0);</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../Desktop/SterilizationDB/Code/UI/src/icons/icons8-remove-96.png</normaloff>../Desktop/SterilizationDB/Code/UI/src/icons/icons8-remove-96.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>25</width>
+              <height>25</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_31" native="true"/>
+          </item>
          </layout>
         </widget>
        </item>
@@ -383,6 +487,18 @@ background-color: rgb(255, 255, 255);</string>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <widget class="QWidget" name="widget_17" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_9">
              <item row="0" column="0">
               <widget class="QLabel" name="label_7">
@@ -390,7 +506,7 @@ background-color: rgb(255, 255, 255);</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Time: 9:30am</string>
+                <string>Time: 10:30am</string>
                </property>
               </widget>
              </item>
@@ -399,6 +515,12 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_14" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <layout class="QGridLayout" name="gridLayout_7">
              <item row="0" column="0">
               <widget class="QLabel" name="label_5">
@@ -406,7 +528,7 @@ background-color: rgb(255, 255, 255);</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Extreme: X</string>
+                <string>Extreme: 15</string>
                </property>
               </widget>
              </item>
@@ -415,6 +537,24 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_15" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_8">
              <item row="0" column="0">
               <widget class="QLabel" name="label_6">
@@ -422,7 +562,9 @@ background-color: rgb(255, 255, 255);</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Lights: Yes</string>
+                <string>Music: No
+Brigtness: 100
+Colors: Red, Green, Blue</string>
                </property>
               </widget>
              </item>
@@ -431,6 +573,12 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_19" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <layout class="QGridLayout" name="gridLayout_12">
              <item row="0" column="0">
               <widget class="QLabel" name="label_8">
@@ -511,6 +659,48 @@ color: rgb(255, 255, 255);
             </layout>
            </widget>
           </item>
+          <item>
+           <widget class="QToolButton" name="btnDelete_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>1</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(234, 0, 49);
+border-style: solid;
+border-width:1px;
+border-radius:10px;
+border-color: rgb(0, 0, 0);</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../Desktop/SterilizationDB/Code/UI/src/icons/icons8-remove-96.png</normaloff>../Desktop/SterilizationDB/Code/UI/src/icons/icons8-remove-96.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>25</width>
+              <height>25</height>
+             </size>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -529,6 +719,18 @@ background-color: rgb(255, 255, 255);</string>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
           <item>
            <widget class="QWidget" name="widget_22" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_14">
              <item row="0" column="0">
               <widget class="QLabel" name="label_10">
@@ -552,7 +754,7 @@ background-color: rgb(255, 255, 255);</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Extreme: X</string>
+                <string>Extreme: 5</string>
                </property>
               </widget>
              </item>
@@ -561,6 +763,18 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_25" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_17">
              <item row="0" column="0">
               <widget class="QLabel" name="label_13">
@@ -568,7 +782,9 @@ background-color: rgb(255, 255, 255);</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Lights: Yes</string>
+                <string>Music: No
+Brigtness: 100
+Colors: Red, Green, Blue</string>
                </property>
               </widget>
              </item>
@@ -657,6 +873,48 @@ color: rgb(255, 255, 255);
             </layout>
            </widget>
           </item>
+          <item>
+           <widget class="QToolButton" name="btnDelete_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>1</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(234, 0, 49);
+border-style: solid;
+border-width:1px;
+border-radius:10px;
+border-color: rgb(0, 0, 0);</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../Desktop/SterilizationDB/Code/UI/src/icons/icons8-remove-96.png</normaloff>../Desktop/SterilizationDB/Code/UI/src/icons/icons8-remove-96.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>25</width>
+              <height>25</height>
+             </size>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -675,6 +933,18 @@ background-color: rgb(255, 255, 255);</string>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
            <widget class="QWidget" name="widget_27" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_19">
              <item row="0" column="0">
               <widget class="QLabel" name="label_14">
@@ -698,7 +968,7 @@ background-color: rgb(255, 255, 255);</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Extreme: X</string>
+                <string>Extreme: 10</string>
                </property>
               </widget>
              </item>
@@ -707,6 +977,18 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_30" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_22">
              <item row="0" column="0">
               <widget class="QLabel" name="label_17">
@@ -714,7 +996,9 @@ background-color: rgb(255, 255, 255);</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Lights: Yes</string>
+                <string>Music: No
+Brigtness: 100
+Colors: Red, Green, Blue</string>
                </property>
               </widget>
              </item>
@@ -801,6 +1085,48 @@ color: rgb(255, 255, 255);
               </widget>
              </item>
             </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnDelete_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>1</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(234, 0, 49);
+border-style: solid;
+border-width:1px;
+border-radius:10px;
+border-color: rgb(0, 0, 0);</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../Desktop/SterilizationDB/Code/UI/src/icons/icons8-remove-96.png</normaloff>../Desktop/SterilizationDB/Code/UI/src/icons/icons8-remove-96.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>25</width>
+              <height>25</height>
+             </size>
+            </property>
            </widget>
           </item>
          </layout>

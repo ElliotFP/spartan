@@ -13,6 +13,7 @@ class AlarmList(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('alarmList.ui', self)
+    
 
 app = QApplication(sys.argv)
 widget = QStackedWidget()
