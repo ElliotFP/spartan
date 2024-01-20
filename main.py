@@ -9,14 +9,14 @@ from PyQt6 import uic
 from PyQt6.QtCore import QThread, pyqtSignal
 
 
-class MainWindow(QMainWindow):
+class AlarmList(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('main.ui', self)
+        uic.loadUi('alarmList.ui', self)
 
 app = QApplication(sys.argv)
 widget = QStackedWidget()
-widget.addWidget(MainWindow())
+widget.addWidget(AlarmList())
 # widget.setWindowIcon(logo_icon)
 widget.setWindowTitle('SPARTAN')
 widget.showMaximized()
