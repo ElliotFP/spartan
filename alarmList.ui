@@ -90,7 +90,7 @@ background-color: rgb(245, 247, 248);
              <enum>QLayout::SetDefaultConstraint</enum>
             </property>
             <item>
-             <widget class="QPushButton" name="btnSterilization">
+             <widget class="QPushButton" name="btnAlarmList">
               <property name="font">
                <font>
                 <bold>true</bold>
@@ -116,7 +116,7 @@ color: rgb(255, 255, 255);</string>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="btnExt">
+             <widget class="QPushButton" name="btnAddAlarm">
               <property name="font">
                <font>
                 <bold>true</bold>
@@ -141,7 +141,7 @@ color: rgb(255, 255, 255);</string>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="btnData">
+             <widget class="QPushButton" name="btnAI">
               <property name="font">
                <font>
                 <bold>true</bold>
@@ -235,9 +235,6 @@ background-color: rgb(255, 255, 255);</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
-           <widget class="QWidget" name="widget_32" native="true"/>
-          </item>
-          <item>
            <widget class="QWidget" name="widget_9" native="true">
             <property name="minimumSize">
              <size>
@@ -253,7 +250,7 @@ background-color: rgb(255, 255, 255);</string>
             </property>
             <layout class="QGridLayout" name="gridLayout">
              <item row="0" column="0">
-              <widget class="QLabel" name="label">
+              <widget class="QLabel" name="labelTime0">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -285,9 +282,21 @@ background-color: rgb(255, 255, 255);</string>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_3">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_2">
+              <widget class="QLabel" name="labelExtreme0">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -321,7 +330,7 @@ background-color: rgb(255, 255, 255);</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_4">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_3">
+              <widget class="QLabel" name="labelLights0">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -345,7 +354,7 @@ Colors: Red, Green</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_5">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_4">
+              <widget class="QLabel" name="labelVoice0">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -361,7 +370,7 @@ Colors: Red, Green</string>
            <widget class="QWidget" name="widget_13" native="true">
             <layout class="QGridLayout" name="gridLayout_10">
              <item row="0" column="0">
-              <widget class="QPushButton" name="btnPass">
+              <widget class="QPushButton" name="btnActive0">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -425,7 +434,7 @@ color: rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="btnDelete">
+           <widget class="QToolButton" name="btnDelete0">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -467,7 +476,14 @@ border-color: rgb(0, 0, 0);</string>
            </widget>
           </item>
           <item>
-           <widget class="QWidget" name="widget_31" native="true"/>
+           <widget class="QWidget" name="widget_31" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -501,7 +517,7 @@ background-color: rgb(255, 255, 255);</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_9">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_7">
+              <widget class="QLabel" name="labelTime1">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -521,9 +537,21 @@ background-color: rgb(255, 255, 255);</string>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_7">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_5">
+              <widget class="QLabel" name="labelExtreme1">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -557,7 +585,7 @@ background-color: rgb(255, 255, 255);</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_8">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_6">
+              <widget class="QLabel" name="labelLights1">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -581,7 +609,7 @@ Colors: Red, Green, Blue</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_12">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_8">
+              <widget class="QLabel" name="labelVoice1">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -597,7 +625,7 @@ Colors: Red, Green, Blue</string>
            <widget class="QWidget" name="widget_16" native="true">
             <layout class="QGridLayout" name="gridLayout_11">
              <item row="0" column="0">
-              <widget class="QPushButton" name="btnPass_2">
+              <widget class="QPushButton" name="btnActive1">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -660,7 +688,7 @@ color: rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="btnDelete_2">
+           <widget class="QToolButton" name="btnDelete1">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -698,6 +726,16 @@ border-color: rgb(0, 0, 0);</string>
               <width>25</width>
               <height>25</height>
              </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_34" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
            </widget>
           </item>
@@ -733,7 +771,7 @@ background-color: rgb(255, 255, 255);</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_14">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_10">
+              <widget class="QLabel" name="labelTime2">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -747,9 +785,27 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_23" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_15">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_11">
+              <widget class="QLabel" name="labelExtreme2">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -763,6 +819,12 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_25" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>200</width>
@@ -777,7 +839,7 @@ background-color: rgb(255, 255, 255);</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_17">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_13">
+              <widget class="QLabel" name="labelLights2">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -793,9 +855,15 @@ Colors: Red, Green, Blue</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_24" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <layout class="QGridLayout" name="gridLayout_16">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_12">
+              <widget class="QLabel" name="labelVoice2">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -811,7 +879,7 @@ Colors: Red, Green, Blue</string>
            <widget class="QWidget" name="widget_20" native="true">
             <layout class="QGridLayout" name="gridLayout_13">
              <item row="0" column="0">
-              <widget class="QPushButton" name="btnPass_3">
+              <widget class="QPushButton" name="btnActive2">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -874,7 +942,7 @@ color: rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="btnDelete_3">
+           <widget class="QToolButton" name="btnDelete2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -912,6 +980,16 @@ border-color: rgb(0, 0, 0);</string>
               <width>25</width>
               <height>25</height>
              </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_36" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
            </widget>
           </item>
@@ -947,7 +1025,7 @@ background-color: rgb(255, 255, 255);</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_19">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_14">
+              <widget class="QLabel" name="labelTime3">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -961,9 +1039,27 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_28" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_20">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_15">
+              <widget class="QLabel" name="labelExtreme3">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -977,6 +1073,12 @@ background-color: rgb(255, 255, 255);</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_30" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>200</width>
@@ -991,7 +1093,7 @@ background-color: rgb(255, 255, 255);</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_22">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_17">
+              <widget class="QLabel" name="labelLights3">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -1007,9 +1109,15 @@ Colors: Red, Green, Blue</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_29" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <layout class="QGridLayout" name="gridLayout_21">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_16">
+              <widget class="QLabel" name="labelVoice3">
                <property name="styleSheet">
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
@@ -1025,7 +1133,7 @@ Colors: Red, Green, Blue</string>
            <widget class="QWidget" name="widget_26" native="true">
             <layout class="QGridLayout" name="gridLayout_18">
              <item row="0" column="0">
-              <widget class="QPushButton" name="btnPass_4">
+              <widget class="QPushButton" name="btnActive3">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -1088,7 +1196,7 @@ color: rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="btnDelete_4">
+           <widget class="QToolButton" name="btnDelete3">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1126,6 +1234,16 @@ border-color: rgb(0, 0, 0);</string>
               <width>25</width>
               <height>25</height>
              </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_38" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
            </widget>
           </item>

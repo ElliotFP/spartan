@@ -32,3 +32,13 @@ We are running our code on an orange pi, with an OV13850 camera, a 512 SSD and a
 -> The front-end UI is implemented through PyQT. 
 
 -> We used a repo <a>https://github.com/aryanvij02/PushUpCounter</a> for the computer vision push up counter.
+
+
+## Installation
+Pip libraries:
+- PyQt6
+- bleak
+- sys
+- mediapipe
+- govee-H613-BTcontroller
+- opencv-python

@@ -14,12 +14,13 @@ class AlarmList(QMainWindow):
         super().__init__()
         uic.loadUi('alarmList.ui', self)
     
+    
 
 app = QApplication(sys.argv)
 widget = QStackedWidget()
 widget.addWidget(AlarmList())
 # widget.setWindowIcon(logo_icon)
 widget.setWindowTitle('SPARTAN')
-widget.showMaximized()
+widget.show()
 
 app.exec()
