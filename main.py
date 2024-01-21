@@ -3,6 +3,8 @@ import mediapipe as mp
 import numpy as np
 import sys
 import json
+from ibm_watson import TextToSpeechV1
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 from PyQt6.QtWidgets import QApplication, QDialog, QStackedWidget, QMainWindow, QLabel, QTableWidgetItem, QAbstractItemView, QFileDialog
 from PyQt6.QtGui import QIcon
@@ -11,6 +13,12 @@ from PyQt6.QtCore import QThread, pyqtSignal
 
 import paramiko
 from scp import SCPClient
+
+
+authenticator = IAMAuthenticator('fiTf2BjX2JMom2WqDSI8ATeUj9dPH0UIyKlUiEMnhFO1')
+text_to_speech = TextToSpeechV1(authenticator=authenticator)
+
+text_to_speech.set_service_url('https://api.us-east.text-to-speech.watson.cloud.ibm.com/instances/40fbddea-d2a5-4314-95c6-ca74b8267155')
 
 def create_ssh_client(server, port, user, password):
     client = paramiko.SSHClient()
@@ -77,11 +85,11 @@ class AlarmList(QMainWindow):
             self.labelTimes[self.nextAlarmIndex].setText(f"Time: {alarm['time']}")
             self.labelExtremes[self.nextAlarmIndex].setText(f"Extreme: {str(alarm['extreme'])}")
 
-            music = alarm['music']
+            music = alarm['music'].split('/')[-1]
             brightness = alarm['brightness']
             colors = ', '.join(alarm['colors'])
             self.labelLights[self.nextAlarmIndex].setText(f"Music: {music}\nBrightness: {brightness}\nColors: {colors}")
-            self.labelVoices[self.nextAlarmIndex].setText(alarm['voice'])
+            self.labelVoices[self.nextAlarmIndex].setText(alarm['voiceContent'])
 
             if alarm['active']:
                 self.btnActives[self.nextAlarmIndex].setText('  Active')
@@ -177,13 +185,27 @@ class NewAlarm(QMainWindow):
         with open('alarms.json') as f:
             self.alarmList = json.load(f)
         self.numberOfAlarms = self.alarmList['numberOfAlarms']
+        highestVoice = 0
+        for i in range(self.numberOfAlarms):
+            if self.alarmList[str(i)]['voice'].split('.mp3')[0] == highestVoice:
+                highestVoice += 1
+        # Convert a string
+        with open(f'voice/{highestVoice}.mp3', 'wb') as audio_file:
+            audio_file.write(
+                text_to_speech.synthesize(
+                    self.voiceTxt.toPlainText(),
+                    voice='en-GB_JamesV3Voice',
+                    accept='audio/mp3'
+                ).get_result().content)
+
         self.alarmList[str(self.numberOfAlarms)] = {
             'time': self.time.time().toString('hh:mm'),
             'extreme': self.extremeBox.value(),
             'colors': self.getColors(),
             'brightness': self.brightnessSlider.value(),
-            'music': f"/root/Desktop/spartan/music{self.fileDir.split('/')[-1]}",
-            'voice': self.voiceTxt.toPlainText(),
+            'music': f"/root/Desktop/spartan/music/{self.fileDir[0].split('/')[-1]}",
+            'voice': f"/root/Desktop/spartan/voice/{highestVoice}.mp3",
+            'voiceContent': self.voiceTxt.toPlainText(),
             'active': True
         }
         self.numberOfAlarms += 1
@@ -191,13 +213,14 @@ class NewAlarm(QMainWindow):
         with open('alarms.json', 'w') as f:
             json.dump(self.alarmList, f, indent=4)
         
-        scp_transfer_file(ssh, self.fileDir, f"/root/Desktop/spartan/music{self.fileDir.split('/')[-1]}")
+        scp_transfer_file(ssh, self.fileDir[0], f"/root/Desktop/spartan/music/{self.fileDir[0].split('/')[-1]}")
+        scp_transfer_file(ssh, f'/home/roko/spartan/voice/{highestVoice}.mp3', f"/root/Desktop/spartan/voice/{highestVoice}.mp3")
         scp_transfer_file(ssh, '/home/roko/spartan/alarms.json', "/root/Desktop/spartan/alarms.json")
         self.backToAlarms()
     
     def selectMusic(self):
-        self.file_name = QFileDialog.getOpenFileName()
-        self.musicTxt.setText(self.file_name[0])
+        self.fileDir = QFileDialog.getOpenFileName()
+        self.musicTxt.setText(self.fileDir[0])
     
     def orange(self):
         if self.isOrange:

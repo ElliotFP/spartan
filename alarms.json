@@ -1,17 +1,19 @@
 {
-    "numberOfAlarms": 3,
+    "numberOfAlarms": 1,
     "0": {
-        "time": "00:25",
-        "extreme": 10,
+        "time": "08:11",
+        "extreme": 12,
         "colors": [
-            "blue",
+            "orange",
+            "green",
             "red",
             "yellow"
         ],
         "brightness": 40,
-        "music": null,
-        "voice": "Hello, my name is Jeff.",
-        "active": false
+        "music": "/root/Desktop/spartan/music/test.mp3",
+        "voice": "/root/Desktop/spartan/voice/0.mp3",
+        "voiceContent": "Fuck",
+        "active": true
     },
     "1": {
         "time": "07:00",
@@ -24,6 +26,7 @@
         "brightness": 40,
         "music": null,
         "voice": "",
+        "voiceContent": null,
         "active": true
     },
     "2": {
