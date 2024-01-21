@@ -4,7 +4,7 @@ import numpy as np
 import sys
 import json
 
-from PyQt6.QtWidgets import QApplication, QDialog, QStackedWidget, QMainWindow, QLabel, QTableWidgetItem, QAbstractItemView
+from PyQt6.QtWidgets import QApplication, QDialog, QStackedWidget, QMainWindow, QLabel, QTableWidgetItem, QAbstractItemView, QFileDialog
 from PyQt6.QtGui import QIcon
 from PyQt6 import uic
 from PyQt6.QtCore import QThread, pyqtSignal
@@ -25,7 +25,7 @@ class AlarmList(QMainWindow):
         self.labelVoices = [self.labelVoice0, self.labelVoice1, self.labelVoice2, self.labelVoice3]
         self.btnActives = [self.btnActive0, self.btnActive1, self.btnActive2, self.btnActive3]
         self.btnDeletes = [self.btnDelete0, self.btnDelete1, self.btnDelete2, self.btnDelete3]
-        self.btnNew.clicked.connect(self.newAlarm)
+        self.btnAddAlarm.clicked.connect(self.addAlarm)
 
         for i in range(4):
             self.btnActives[i].clicked.connect(lambda _, i=i: self.setActive(i))
@@ -33,7 +33,8 @@ class AlarmList(QMainWindow):
         
         self.refresh()
     
-    def newAlarm(self):
+    def addAlarm(self):
+        widget.setCurrentIndex(1)
 
     
     def refresh(self):
@@ -49,7 +50,7 @@ class AlarmList(QMainWindow):
             self.cards[self.nextAlarmIndex].show()
             alarm = self.alarmList[str(i)]
             self.labelTimes[self.nextAlarmIndex].setText(f"Time: {alarm['time']}")
-            self.labelExtremes[self.nextAlarmIndex].setText(str(alarm['extreme']))
+            self.labelExtremes[self.nextAlarmIndex].setText(f"Extreme: {str(alarm['extreme'])}")
 
             music = alarm['music']
             brightness = alarm['brightness']
@@ -104,13 +105,56 @@ class NewAlarm(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('alarm.ui', self)
-
+        self.isOrange = False
+        self.isGreen = False
+        self.isBlue = False
+        self.btnAlarms.clicked.connect(self.backToAlarms)
+        self.btnMusic.clicked.connect(self.selectMusic)
+        self.btnOrange.clicked.connect(self.orange)
+        self.btnGreen.clicked.connect(self.green)
+        self.btnBlue.clicked.connect(self.blue)
+        self.fileDir = None
     
+    def backToAlarms(self):
+        alarmListWidget.refresh()
+        widget.setCurrentIndex(0)
+    
+    def selectMusic(self):
+        self.file_name = QFileDialog.getOpenFileName()
+        self.musicTxt.setText(self.file_name[0])
+    
+    def orange(self):
+        if self.isOrange:
+            self.btnOrange.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(245, 247, 248);")
+            self.isOrange = False
+        else:
+            self.btnOrange.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(255, 85, 0);")
+            self.isOrange = True
+
+    def green(self):
+        if self.isGreen:
+            self.btnGreen.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(245, 247, 248);")
+            self.isGreen = False
+        else:
+            self.btnGreen.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(0, 234, 164);")
+            self.isGreen = True
+    
+    def blue(self):
+        if self.isBlue:
+            self.btnBlue.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(245, 247, 248);")
+            self.isBlue = False
+        else:
+            self.btnBlue.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(0, 0, 255);")
+            self.isBlue = True
+    
+
 
 app = QApplication(sys.argv)
 widget = QStackedWidget()
-widget.addWidget(AlarmList())
-widget.addWidget(NewAlarm())
+alarmListWidget = AlarmList()
+newAlarmWidget = NewAlarm()
+widget.addWidget(alarmListWidget)
+widget.addWidget(newAlarmWidget)
 # widget.setWindowIcon(logo_icon)
 widget.setWindowTitle('SPARTAN')
 widget.show()
