@@ -47,3 +47,5 @@ Pip libraries:
 - python-crontab
 - paramiko
 - scp
+
+  **Note** If the PushUp sensor does not find your camera go in PushUpCounter/PushUpCounter.py and change the capture to the right port. 
