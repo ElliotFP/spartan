@@ -42,3 +42,5 @@ Pip libraries:
 - govee-H613-BTcontroller
 - opencv-python
 - pygame
+- ibm-watson
+- ibm-cloud-sdk-core
