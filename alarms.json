@@ -1,17 +1,6 @@
 {
-    "numberOfAlarms": 4,
+    "numberOfAlarms": 3,
     "0": {
-        "time": "09:00:00",
-        "extreme": 15,
-        "colors": [
-            "green"
-        ],
-        "brightness": 130,
-        "music": "music_file.mp3",
-        "voice": "Get Ready!",
-        "active": true
-    },
-    "1": {
         "time": "00:25",
         "extreme": 10,
         "colors": [
@@ -22,6 +11,19 @@
         "brightness": 40,
         "music": null,
         "voice": "Hello, my name is Jeff.",
+        "active": false
+    },
+    "1": {
+        "time": "07:00",
+        "extreme": 0,
+        "colors": [
+            "orange",
+            "blue",
+            "yellow"
+        ],
+        "brightness": 40,
+        "music": null,
+        "voice": "",
         "active": true
     },
     "2": {

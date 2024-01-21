@@ -9,6 +9,31 @@ from PyQt6.QtGui import QIcon
 from PyQt6 import uic
 from PyQt6.QtCore import QThread, pyqtSignal
 
+import paramiko
+from scp import SCPClient
+
+def create_ssh_client(server, port, user, password):
+    client = paramiko.SSHClient()
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.connect(server, port, user, password)
+    return client
+
+def scp_transfer_file(ssh_client, local_path, remote_path):
+    with SCPClient(ssh_client.get_transport()) as scp:
+        scp.put(local_path, remote_path)
+
+# Replace these with your Raspberry Pi details
+server = '10.42.0.97'
+port = 22  # default SSH port
+username = 'root'  # default Raspberry Pi username
+password = 'orangepi'  # password for SSH login
+
+local_file = None  # File on your Ubuntu machine
+remote_file = None # Destination on Raspberry Pi
+
+# Create SSH client
+ssh = create_ssh_client(server, port, username, password)
+
 
 class AlarmList(QMainWindow):
     def __init__(self):
@@ -89,6 +114,7 @@ class AlarmList(QMainWindow):
         self.alarmList[str(index)] = alarm
         with open('alarms.json', 'w') as f:
             json.dump(self.alarmList, f, indent=4)
+        scp_transfer_file(ssh, '/home/roko/spartan/alarms.json', "/root/Desktop/spartan/alarms.json")
 
 
     def deleteAlarm(self, index):
@@ -99,6 +125,8 @@ class AlarmList(QMainWindow):
         with open('alarms.json', 'w') as f:
             json.dump(self.alarmList, f, indent=4)
         
+        scp_transfer_file(ssh, '/home/roko/spartan/alarms.json', "/root/Desktop/spartan/alarms.json")
+
         self.refresh()
 
 class NewAlarm(QMainWindow):
@@ -154,7 +182,7 @@ class NewAlarm(QMainWindow):
             'extreme': self.extremeBox.value(),
             'colors': self.getColors(),
             'brightness': self.brightnessSlider.value(),
-            'music': self.fileDir,
+            'music': f"/root/Desktop/spartan/music{self.fileDir.split('/')[-1]}",
             'voice': self.voiceTxt.toPlainText(),
             'active': True
         }
@@ -162,6 +190,9 @@ class NewAlarm(QMainWindow):
         self.alarmList['numberOfAlarms'] = self.numberOfAlarms
         with open('alarms.json', 'w') as f:
             json.dump(self.alarmList, f, indent=4)
+        
+        scp_transfer_file(ssh, self.fileDir, f"/root/Desktop/spartan/music{self.fileDir.split('/')[-1]}")
+        scp_transfer_file(ssh, '/home/roko/spartan/alarms.json', "/root/Desktop/spartan/alarms.json")
         self.backToAlarms()
     
     def selectMusic(self):

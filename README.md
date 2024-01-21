@@ -45,3 +45,5 @@ Pip libraries:
 - ibm-watson
 - ibm-cloud-sdk-core
 - python-crontab
+- paramiko
+- scp
