@@ -15,7 +15,7 @@ while True:
                 print("Alarm!")
                 if not playing:
                     playing = True
-
+                    os.system("python3 AlarmRunner.py " + str(i))
             
             else:
                 playing = False

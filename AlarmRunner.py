@@ -3,11 +3,12 @@ import asyncio
 import concurrent.futures
 import json
 import os
+import time
 import pygame
 from PushUpCounter import PushUpCounter
 from lightControls import start_strobe, stop_strobe
 
-pygame.init()
+pygame.mixer.init()
 
 # Read JSON file for settings
 with open("alarms.json") as json_file:
@@ -21,17 +22,35 @@ lights_color = data[json_num]["colors"]
 alarm_sound = data[json_num]["music"]
 speech_text = data[json_num]["voice"]
 
+colorDict = {
+    "red": (255, 0, 0),
+    "green": (0,128,0),
+    "blue": (65,105,225),
+    "yellow": (255, 255, 0),
+    "orange": (255, 69, 0),
+    "brown": (139,69,19)
+}
+
 async def alarm_sequence():
+    if speech_text!=None:
+        print("Playing speech")
+        song = pygame.mixer.music.load(speech_text)
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy():
+            pygame.time.Clock().tick(100)
     # Play alarm sound
     if alarm_sound!=None:
         print("Playing alarm sound")
-        song = pygame.mixer.Sound(alarm_sound)
-        song.play()
+        song = pygame.mixer.music.load(alarm_sound)
+        pygame.mixer.music.play()
     
     # Start light strobe
     brightness = 200  # Example brightness
     frequency = 0.5   # Example frequency in seconds
-    colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]  # Example colors
+    colors = []
+    for color in lights_color:
+        colors.append(colorDict[color])
+        
     strobe_task, led = await start_strobe(brightness, frequency, colors)
 
     # Start pushup counter and wait for it to finish

@@ -82,8 +82,10 @@ class AlarmList(QMainWindow):
             alarm = self.alarmList[str(i)]
             self.labelTimes[self.nextAlarmIndex].setText(f"Time: {alarm['time']}")
             self.labelExtremes[self.nextAlarmIndex].setText(f"Extreme: {str(alarm['extreme'])}")
-
-            music = alarm['music'].split('/')[-1]
+            if alarm['music'] == None:
+                music = 'None'
+            else:
+                music = alarm['music'].split('/')[-1]
             brightness = alarm['brightness']
             colors = ', '.join(alarm['colors'])
             self.labelLights[self.nextAlarmIndex].setText(f"Music: {music}\nBrightness: {brightness}\nColors: {colors}")
@@ -185,34 +187,47 @@ class NewAlarm(QMainWindow):
         self.numberOfAlarms = self.alarmList['numberOfAlarms']
         highestVoice = 0
         for i in range(self.numberOfAlarms):
-            if self.alarmList[str(i)]['voice'].split('.mp3')[0] == highestVoice:
-                highestVoice += 1
+            if self.alarmList[str(i)]['voice'] != None:
+                if self.alarmList[str(i)]['voice'].split('.mp3')[0] == highestVoice:
+                    highestVoice += 1
         # Convert a string
-        with open(f'voice/{highestVoice}.mp3', 'wb') as audio_file:
-            audio_file.write(
-                text_to_speech.synthesize(
-                    self.voiceTxt.toPlainText(),
-                    voice='en-GB_JamesV3Voice',
-                    accept='audio/mp3'
-                ).get_result().content)
+        if self.voiceTxt.toPlainText() != '':
+            with open(f'voice/{highestVoice}.mp3', 'wb') as audio_file:
+                audio_file.write(
+                    text_to_speech.synthesize(
+                        self.voiceTxt.toPlainText(),
+                        voice='en-GB_JamesV3Voice',
+                        accept='audio/mp3'
+                    ).get_result().content)
+        
 
         self.alarmList[str(self.numberOfAlarms)] = {
             'time': self.time.time().toString('hh:mm'),
             'extreme': self.extremeBox.value(),
             'colors': self.getColors(),
             'brightness': self.brightnessSlider.value(),
-            'music': f"/root/Desktop/spartan/music/{self.fileDir[0].split('/')[-1]}",
-            'voice': f"/root/Desktop/spartan/voice/{highestVoice}.mp3",
             'voiceContent': self.voiceTxt.toPlainText(),
             'active': True
         }
+        if self.fileDir != None:
+            self.alarmList[str(self.numberOfAlarms)]['music'] = self.fileDir[0]
+            scp_transfer_file(ssh, self.fileDir[0], f"/root/Desktop/spartan/music/{self.fileDir[0].split('/')[-1]}")
+
+        else:
+            self.alarmList[str(self.numberOfAlarms)]['music'] = None
+
+        if self.voiceTxt.toPlainText() != '':
+            self.alarmList[str(self.numberOfAlarms)]['voice'] = f'/root/Desktop/spartan/voice/{highestVoice}.mp3'
+            scp_transfer_file(ssh, f'/home/roko/spartan/voice/{highestVoice}.mp3', f"/root/Desktop/spartan/voice/{highestVoice}.mp3")
+
+        else:
+            self.alarmList[str(self.numberOfAlarms)]['voice'] = None
+        
         self.numberOfAlarms += 1
         self.alarmList['numberOfAlarms'] = self.numberOfAlarms
         with open('alarms.json', 'w') as f:
             json.dump(self.alarmList, f, indent=4)
         
-        scp_transfer_file(ssh, self.fileDir[0], f"/root/Desktop/spartan/music/{self.fileDir[0].split('/')[-1]}")
-        scp_transfer_file(ssh, f'/home/roko/spartan/voice/{highestVoice}.mp3', f"/root/Desktop/spartan/voice/{highestVoice}.mp3")
         scp_transfer_file(ssh, '/home/roko/spartan/alarms.json', "/root/Desktop/spartan/alarms.json")
         self.backToAlarms()
     

@@ -1,58 +1,56 @@
 {
-    "numberOfAlarms": 1,
+    "numberOfAlarms": 3,
     "0": {
-        "time": "07:01",
-        "extreme": 12,
+        "time": "00:00",
+        "extreme": 0,
+        "colors": [
+            "blue",
+            "red"
+        ],
+        "brightness": 0,
+        "voiceContent": "FUCK YOU TIM",
+        "active": true,
+        "music": null,
+        "voice": "/home/roko/spartan/voice/0.mp3"
+    },
+    "1": {
+        "time": "00:00",
+        "extreme": 4,
+        "colors": [
+            "blue",
+            "red"
+        ],
+        "brightness": 0,
+        "voiceContent": "FUCK YOU ELLIOT.",
+        "active": true,
+        "music": null,
+        "voice": "/home/roko/spartan/voice/0.mp3"
+    },
+    "2": {
+        "time": "00:00",
+        "extreme": 6,
+        "colors": [
+            "yellow",
+            "brown"
+        ],
+        "brightness": 100,
+        "voiceContent": "",
+        "active": true,
+        "music": "/home/roko/spartan/music/test.mp3",
+        "voice": null
+    },
+    "3": {
+        "time": "09:23",
+        "extreme": 5,
         "colors": [
             "orange",
             "green",
-            "red",
-            "yellow"
+            "brown"
         ],
-        "brightness": 40,
-        "music": "/home/roko/spartan/music/test.mp3",
-        "voice": "/home/roko/spartan/voice/0.mp3",
+        "brightness": 55,
+        "music": "/root/Desktop/spartan/music/test.mp3",
+        "voice": "/root/Desktop/spartan/voice/0.mp3",
         "voiceContent": "Fuck",
-        "active": true
-    },
-    "1": {
-        "time": "07:00",
-        "extreme": 0,
-        "colors": [
-            "orange",
-            "blue",
-            "yellow"
-        ],
-        "brightness": 40,
-        "music": null,
-        "voice": "",
-        "voiceContent": null,
-        "active": true
-    },
-    "2": {
-        "time": "07:00",
-        "extreme": 0,
-        "colors": [
-            "orange",
-            "blue",
-            "yellow"
-        ],
-        "brightness": 40,
-        "music": null,
-        "voice": "",
-        "active": true
-    },
-    "3": {
-        "time": "07:00",
-        "extreme": 0,
-        "colors": [
-            "orange",
-            "blue",
-            "yellow"
-        ],
-        "brightness": 40,
-        "music": null,
-        "voice": "",
         "active": true
     }
 }
