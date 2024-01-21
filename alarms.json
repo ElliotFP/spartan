@@ -1,30 +1,30 @@
 {
-    "numberOfAlarms": 3,
+    "numberOfAlarms": 1,
     "0": {
-        "time": "00:00",
-        "extreme": 0,
+        "time": "10:21",
+        "extreme": 10,
         "colors": [
-            "blue",
-            "red"
+            "yellow",
+            "brown"
         ],
-        "brightness": 0,
-        "voiceContent": "FUCK YOU TIM",
+        "brightness": 100,
+        "voiceContent": "HELLO TIM.",
         "active": true,
-        "music": null,
-        "voice": "/home/roko/spartan/voice/0.mp3"
+        "music": "/root/Desktop/spartan/music/Skrillex - Bangarang (Ft. Sirah) [Official Audio].mp3",
+        "voice": "/root/Desktop/spartan/voice/0.mp3"
     },
     "1": {
         "time": "00:00",
-        "extreme": 4,
+        "extreme": 6,
         "colors": [
-            "blue",
-            "red"
+            "yellow",
+            "brown"
         ],
-        "brightness": 0,
-        "voiceContent": "FUCK YOU ELLIOT.",
+        "brightness": 100,
+        "voiceContent": "",
         "active": true,
-        "music": null,
-        "voice": "/home/roko/spartan/voice/0.mp3"
+        "music": "/home/roko/spartan/music/test.mp3",
+        "voice": null
     },
     "2": {
         "time": "00:00",

@@ -210,7 +210,7 @@ class NewAlarm(QMainWindow):
             'active': True
         }
         if self.fileDir != None:
-            self.alarmList[str(self.numberOfAlarms)]['music'] = self.fileDir[0]
+            self.alarmList[str(self.numberOfAlarms)]['music'] = f"/root/Desktop/spartan/music/{self.fileDir[0].split('/')[-1]}"
             scp_transfer_file(ssh, self.fileDir[0], f"/root/Desktop/spartan/music/{self.fileDir[0].split('/')[-1]}")
 
         else:
