@@ -1,4 +1,3 @@
-import cv2
 import mediapipe as mp
 import numpy as np
 import sys
@@ -9,7 +8,6 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from PyQt6.QtWidgets import QApplication, QDialog, QStackedWidget, QMainWindow, QLabel, QTableWidgetItem, QAbstractItemView, QFileDialog
 from PyQt6.QtGui import QIcon
 from PyQt6 import uic
-from PyQt6.QtCore import QThread, pyqtSignal
 
 import paramiko
 from scp import SCPClient

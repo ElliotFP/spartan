@@ -1,7 +1,7 @@
 {
     "numberOfAlarms": 1,
     "0": {
-        "time": "08:11",
+        "time": "07:01",
         "extreme": 12,
         "colors": [
             "orange",
@@ -10,8 +10,8 @@
             "yellow"
         ],
         "brightness": 40,
-        "music": "/root/Desktop/spartan/music/test.mp3",
-        "voice": "/root/Desktop/spartan/voice/0.mp3",
+        "music": "/home/roko/spartan/music/test.mp3",
+        "voice": "/home/roko/spartan/voice/0.mp3",
         "voiceContent": "Fuck",
         "active": true
     },

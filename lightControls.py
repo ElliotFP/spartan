@@ -9,7 +9,7 @@ MAC_ADDRESS = 'D4:AD:FC:A3:70:54'
 # Setup logging
 logging.basicConfig()
 logging.getLogger('govee_btled_H613B').setLevel(logging.DEBUG)
-
+end = False
 # Function for the customizable strobe effect
 async def customizable_strobe(led, brightness, frequency, colors):
     try:
@@ -19,6 +19,8 @@ async def customizable_strobe(led, brightness, frequency, colors):
                 await asyncio.sleep(frequency / 2)  # Wait after setting color
                 await led.set_brightness(brightness)
                 await asyncio.sleep(frequency / 2)  # Wait after setting brightness
+            if end:
+                break
     except asyncio.CancelledError:
         pass  # Allow the async task to be cancelled
 

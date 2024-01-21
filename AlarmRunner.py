@@ -1,9 +1,10 @@
 import sys
 import asyncio
+import concurrent.futures
 import json
 import os
 import pygame
-from PushUpCounter import PushUpAndSquatCounter
+from PushUpCounter import PushUpCounter
 from lightControls import start_strobe, stop_strobe
 
 pygame.init()
@@ -22,7 +23,8 @@ speech_text = data[json_num]["voice"]
 
 async def alarm_sequence():
     # Play alarm sound
-    if alarm_sound!=None and os.path.isfile(alarm_sound):
+    if alarm_sound!=None:
+        print("Playing alarm sound")
         song = pygame.mixer.Sound(alarm_sound)
         song.play()
     
@@ -33,13 +35,18 @@ async def alarm_sequence():
     strobe_task, led = await start_strobe(brightness, frequency, colors)
 
     # Start pushup counter and wait for it to finish
-    await PushUpAndSquatCounter.start_pushup_counter(extreme_mode)
+    loop = asyncio.get_running_loop()
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        result = await loop.run_in_executor(executor, lambda: PushUpCounter.start_pushup_counter(extreme_mode))
+        print(result)
 
     # Stop light strobe after pushup counter finishes
     await stop_strobe(strobe_task, led)
 
     # Stop alarm sound
-    song.stop()
+    if alarm_sound!=None and os.path.isfile(alarm_sound):
+        song.stop()
 
 if __name__ == '__main__':
     asyncio.run(alarm_sequence())

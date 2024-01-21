@@ -2,10 +2,10 @@
 import cv2
 import mediapipe as mp
 import numpy as np
-from PushUpCounter import PoseModule
+import PoseModule
 
 def start_pushup_counter(target_pushups=10):  # Default target is 10 push-ups
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
     detector = PoseModule.poseDetector()
     count = 0
     direction = 0
