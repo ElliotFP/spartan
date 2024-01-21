@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1001</width>
-    <height>596</height>
+    <height>602</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -843,7 +843,7 @@ background-color: rgb(255, 255, 255);</string>
              <string notr="true">border-radius: 10;
 background-color: rgb(255, 255, 255);</string>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
               <widget class="QWidget" name="widget_36" native="true">
                <property name="sizePolicy">
@@ -875,16 +875,6 @@ background-color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" name="widget_37" native="true">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-              </widget>
-             </item>
-             <item>
               <widget class="QWidget" name="widget_38" native="true">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -893,16 +883,40 @@ background-color: rgb(255, 255, 255);</string>
                 </sizepolicy>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_4">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
-                 <widget class="QPushButton" name="btnOrange">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>50</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">border-radius:6px;
+                 <widget class="QWidget" name="widget_37" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_9">
+                   <item>
+                    <widget class="QPushButton" name="btnOrange">
+                     <property name="minimumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border-radius:6px;
 border-style: inset;
 border-width: 1.5px;
 border-color: rgb(22, 39, 95);
@@ -913,22 +927,98 @@ background-color: rgb(119, 118, 123);
 color: rgb(36, 31, 49);
 background-color: rgb(245, 247, 248);
 </string>
-                  </property>
-                  <property name="text">
-                   <string>Orange</string>
-                  </property>
+                     </property>
+                     <property name="text">
+                      <string>Orange</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnGreen">
+                     <property name="minimumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border-radius:6px;
+border-style: inset;
+border-width: 1.5px;
+border-color: rgb(22, 39, 95);
+
+background-color: rgb(119, 118, 123);
+/*border-color: rgb(234, 0, 49);*/
+
+color: rgb(36, 31, 49);
+background-color: rgb(245, 247, 248);
+</string>
+                     </property>
+                     <property name="text">
+                      <string>Green</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnBlue">
+                     <property name="minimumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border-radius:6px;
+border-style: inset;
+border-width: 1.5px;
+border-color: rgb(22, 39, 95);
+
+background-color: rgb(119, 118, 123);
+/*border-color: rgb(234, 0, 49);*/
+
+color: rgb(36, 31, 49);
+background-color: rgb(245, 247, 248);
+</string>
+                     </property>
+                     <property name="text">
+                      <string>Blue</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btnGreen">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>50</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">border-radius:6px;
+                 <widget class="QWidget" name="widget_45" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_10">
+                   <item>
+                    <widget class="QPushButton" name="btnRed">
+                     <property name="minimumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border-radius:6px;
 border-style: inset;
 border-width: 1.5px;
 border-color: rgb(22, 39, 95);
@@ -939,22 +1029,28 @@ background-color: rgb(119, 118, 123);
 color: rgb(36, 31, 49);
 background-color: rgb(245, 247, 248);
 </string>
-                  </property>
-                  <property name="text">
-                   <string>Green</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="btnBlue">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>50</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">border-radius:6px;
+                     </property>
+                     <property name="text">
+                      <string>Red</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnYellow">
+                     <property name="minimumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border-radius:6px;
 border-style: inset;
 border-width: 1.5px;
 border-color: rgb(22, 39, 95);
@@ -965,23 +1061,48 @@ background-color: rgb(119, 118, 123);
 color: rgb(36, 31, 49);
 background-color: rgb(245, 247, 248);
 </string>
-                  </property>
-                  <property name="text">
-                   <string>Blue</string>
-                  </property>
+                     </property>
+                     <property name="text">
+                      <string>Yellow</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnBrown">
+                     <property name="minimumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>70</width>
+                       <height>55</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border-radius:6px;
+border-style: inset;
+border-width: 1.5px;
+border-color: rgb(22, 39, 95);
+
+background-color: rgb(119, 118, 123);
+/*border-color: rgb(234, 0, 49);*/
+
+color: rgb(36, 31, 49);
+background-color: rgb(245, 247, 248);
+</string>
+                     </property>
+                     <property name="text">
+                      <string>Brown</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QWidget" name="widget_45" native="true">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
               </widget>
              </item>
             </layout>

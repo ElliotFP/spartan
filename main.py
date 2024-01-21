@@ -108,11 +108,17 @@ class NewAlarm(QMainWindow):
         self.isOrange = False
         self.isGreen = False
         self.isBlue = False
+        self.isRed = False
+        self.isYellow = False
+        self.isBrown = False
         self.btnAlarms.clicked.connect(self.backToAlarms)
         self.btnMusic.clicked.connect(self.selectMusic)
         self.btnOrange.clicked.connect(self.orange)
         self.btnGreen.clicked.connect(self.green)
         self.btnBlue.clicked.connect(self.blue)
+        self.btnRed.clicked.connect(self.red)
+        self.btnYellow.clicked.connect(self.yellow)
+        self.btnBrown.clicked.connect(self.brown)
         self.fileDir = None
     
     def backToAlarms(self):
@@ -147,6 +153,29 @@ class NewAlarm(QMainWindow):
             self.btnBlue.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(0, 0, 255);")
             self.isBlue = True
     
+    def red(self):
+        if self.isRed:
+            self.btnRed.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(245, 247, 248);")
+            self.isRed = False
+        else:
+            self.btnRed.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(234, 0, 49);")
+            self.isRed = True
+    
+    def yellow(self):
+        if self.isYellow:
+            self.btnYellow.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(245, 247, 248);")
+            self.isYellow = False
+        else:
+            self.btnYellow.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(255, 255, 0);")
+            self.isYellow = True
+    
+    def brown(self):
+        if self.isBrown:
+            self.btnBrown.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(36, 31, 49);background-color: rgb(245, 247, 248);")
+            self.isBrown = False
+        else:
+            self.btnBrown.setStyleSheet("border-radius:6px;border-style: inset;border-width: 1.5px;border-color: rgb(22, 39, 95);color: rgb(255, 255, 255);background-color: rgb(128, 64, 0);")
+            self.isBrown = True
 
 
 app = QApplication(sys.argv)
