@@ -140,31 +140,6 @@ color: rgb(255, 255, 255);</string>
               </property>
              </widget>
             </item>
-            <item>
-             <widget class="QPushButton" name="btnAI">
-              <property name="font">
-               <font>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset>
-                <normaloff>UI/editProfile.png</normaloff>UI/editProfile.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>32</width>
-                <height>32</height>
-               </size>
-              </property>
-             </widget>
-            </item>
            </layout>
           </item>
          </layout>
@@ -348,7 +323,7 @@ Colors: Red, Green</string>
            <widget class="QWidget" name="widget_12" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>1</horstretch>
+              <horstretch>2</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
@@ -360,7 +335,7 @@ Colors: Red, Green</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>200</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
@@ -389,6 +364,12 @@ Colors: Red, Green</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_13" native="true">
+            <property name="maximumSize">
+             <size>
+              <width>179</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_10">
              <item row="0" column="0">
               <widget class="QPushButton" name="btnActive0">
@@ -489,7 +470,7 @@ border-color: rgb(0, 0, 0);</string>
            <widget class="QWidget" name="widget_31" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>1</horstretch>
+              <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
@@ -613,7 +594,7 @@ Colors: Red, Green, Blue</string>
            <widget class="QWidget" name="widget_19" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>1</horstretch>
+              <horstretch>2</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
@@ -625,7 +606,7 @@ Colors: Red, Green, Blue</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>200</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
@@ -636,7 +617,7 @@ Colors: Red, Green, Blue</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Voice: On</string>
+                <string>Voice: AEKKAUEHFDAOKHDLKAWIHDOWAIDHAIHDOAWUHDWAD</string>
                </property>
               </widget>
              </item>
@@ -645,6 +626,12 @@ Colors: Red, Green, Blue</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_16" native="true">
+            <property name="maximumSize">
+             <size>
+              <width>179</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_11">
              <item row="0" column="0">
               <widget class="QPushButton" name="btnActive1">
@@ -745,7 +732,7 @@ border-color: rgb(0, 0, 0);</string>
            <widget class="QWidget" name="widget_34" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>1</horstretch>
+              <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
@@ -869,7 +856,7 @@ Colors: Red, Green, Blue</string>
            <widget class="QWidget" name="widget_24" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>1</horstretch>
+              <horstretch>2</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
@@ -881,7 +868,7 @@ Colors: Red, Green, Blue</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>200</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
@@ -892,7 +879,7 @@ Colors: Red, Green, Blue</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Voice: On</string>
+                <string>Voice: OnAWOUDHOIUEAHIEAHFIESAUHFDKEAHFAIEUFHESAIUFH</string>
                </property>
               </widget>
              </item>
@@ -901,6 +888,12 @@ Colors: Red, Green, Blue</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_20" native="true">
+            <property name="maximumSize">
+             <size>
+              <width>179</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_13">
              <item row="0" column="0">
               <widget class="QPushButton" name="btnActive2">
@@ -1011,7 +1004,7 @@ border-color: rgb(0, 0, 0);</string>
            <widget class="QWidget" name="widget_36" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>1</horstretch>
+              <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
@@ -1135,7 +1128,7 @@ Colors: Red, Green, Blue</string>
            <widget class="QWidget" name="widget_29" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>1</horstretch>
+              <horstretch>2</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
@@ -1147,7 +1140,7 @@ Colors: Red, Green, Blue</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>200</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
@@ -1158,7 +1151,7 @@ Colors: Red, Green, Blue</string>
                 <string notr="true">color: rgb(36, 31, 49);</string>
                </property>
                <property name="text">
-                <string>Voice: On</string>
+                <string>Voice: OnAKWHDOIAIHIAUDHIWAUHDIAWUHDIWAUHDIAWUHDIWAHUDIWAHUD</string>
                </property>
               </widget>
              </item>
@@ -1167,6 +1160,12 @@ Colors: Red, Green, Blue</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_26" native="true">
+            <property name="maximumSize">
+             <size>
+              <width>179</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <layout class="QGridLayout" name="gridLayout_18">
              <item row="0" column="0">
               <widget class="QPushButton" name="btnActive3">
@@ -1277,7 +1276,7 @@ border-color: rgb(0, 0, 0);</string>
            <widget class="QWidget" name="widget_38" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>1</horstretch>
+              <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>

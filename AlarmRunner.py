@@ -2,7 +2,7 @@ import sys
 import cv2
 import mediapipe as mp
 import numpy as np
-import pygame   
+import pygame
 import os
 import json
 from PushUpCounter import PushUpCounter

@@ -25,12 +25,16 @@ class AlarmList(QMainWindow):
         self.labelVoices = [self.labelVoice0, self.labelVoice1, self.labelVoice2, self.labelVoice3]
         self.btnActives = [self.btnActive0, self.btnActive1, self.btnActive2, self.btnActive3]
         self.btnDeletes = [self.btnDelete0, self.btnDelete1, self.btnDelete2, self.btnDelete3]
+        self.btnNew.clicked.connect(self.newAlarm)
 
         for i in range(4):
             self.btnActives[i].clicked.connect(lambda _, i=i: self.setActive(i))
             self.btnDeletes[i].clicked.connect(lambda _, i=i: self.deleteAlarm(i))
         
         self.refresh()
+    
+    def newAlarm(self):
+
     
     def refresh(self):
         self.nextAlarmIndex = 0
@@ -96,11 +100,17 @@ class AlarmList(QMainWindow):
         
         self.refresh()
 
+class NewAlarm(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi('alarm.ui', self)
+
     
 
 app = QApplication(sys.argv)
 widget = QStackedWidget()
 widget.addWidget(AlarmList())
+widget.addWidget(NewAlarm())
 # widget.setWindowIcon(logo_icon)
 widget.setWindowTitle('SPARTAN')
 widget.show()
