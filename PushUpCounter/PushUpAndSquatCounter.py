@@ -280,5 +280,5 @@ def start_squat_counter():
 
 # This allows the script to be imported without running the function immediately
 if __name__ == "__main__":
-    start_pushup_counter(20)  # Start with a target of 20 push-ups
+    #start_pushup_counter(20)  # Start with a target of 20 push-ups
     start_squat_counter()

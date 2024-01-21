@@ -1,55 +1,45 @@
 import sys
-import cv2
-import mediapipe as mp
-import numpy as np
-import pygame
-import os
+import asyncio
 import json
+import os
+import pygame
 from PushUpCounter import PushUpAndSquatCounter
+from lightControls import start_strobe, stop_strobe
 
-pygame.init() # initialize pygame
+pygame.init()
 
-# read json file for settings
+# Read JSON file for settings
 with open("alarms.json") as json_file:
     data = json.load(json_file)
 
-json_num = sys.argv[1] # int for alarm number
+json_num = sys.argv[1]  # int for alarm number
 
+extreme_mode = data[json_num]["extreme"]  # number of pushups or squats
+lights_brightness = data[json_num]["brightness"]
+lights_color = data[json_num]["colors"]
+alarm_sound = data[json_num]["music"]
+speech_text = data[json_num]["voice"]
 
-extreme_mode = data[json_num]["extreme"] # number of pushups
-lights_brightness = data[json_num]["brightness"] # int for brightness
-lights_color = data[json_num]["colors"] # string for color
-alarm_sound = data[json_num]["music"] # string for alarm sound
-speech_text = data[json_num]["voice"] # string for speech text
-
-if (alarm_sound != ""):
-    print("alarm sound is " + alarm_sound)
-
-    if (speech_text != ""):
-        print("speech text is " + speech_text)
-    
-    # play alarm sound
-    if (os.path.isfile(alarm_sound)):
+async def alarm_sequence():
+    # Play alarm sound
+    if alarm_sound!=None and os.path.isfile(alarm_sound):
         song = pygame.mixer.Sound(alarm_sound)
         song.play()
-    elif (os.path.isdir(alarm_sound)):
-        print("alarm sound is a directory")
-        # play all .mp3 files in directory
+    
+    # Start light strobe
+    brightness = 200  # Example brightness
+    frequency = 0.5   # Example frequency in seconds
+    colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]  # Example colors
+    strobe_task, led = await start_strobe(brightness, frequency, colors)
 
-    if extreme_mode:
-        print("extreme mode")
-        PushUpAndSquatCounter.start_pushup_counter(extreme_mode)
-        
-        # stop alarm sound
-        song.stop()
+    # Start pushup counter and wait for it to finish
+    await PushUpAndSquatCounter.start_pushup_counter(extreme_mode)
 
-# Lights Section
+    # Stop light strobe after pushup counter finishes
+    await stop_strobe(strobe_task, led)
 
-if (lights_brightness > 0):
-    print("lights on")
-    if lights_mode == 0:
-        print("lights mode is solid")
-        
+    # Stop alarm sound
+    song.stop()
 
-else:
-    print("no alarm sound")
+if __name__ == '__main__':
+    asyncio.run(alarm_sequence())
