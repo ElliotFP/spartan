@@ -80,7 +80,7 @@ def start_pushup_counter(target_pushups=10):  # Default target is 10 push-ups
         cv2.rectangle(img, (0, int(height - text_height - 20)), (20 + text_width, int(height +20)), (245,247,255), cv2.FILLED)
         cv2.putText(img, counter_text, (10, int(height - 10)), cv2.FONT_HERSHEY_COMPLEX, counter_size, (46, 64, 87), counter_thickness)
 
-        # Feedback - keep it at the top right or move as desired rgb(245,247,255) rgb(46,64,87)
+        # Feedback - keep it at the top right or move as desired 
         feedback_pos_x = 500  # X coordinate for feedback text
         feedback_pos_y = 40   # Y coordinate for feedback text
         cv2.rectangle(img, (feedback_pos_x, 0), (832, feedback_pos_y +20), (245,247,255), cv2.FILLED)

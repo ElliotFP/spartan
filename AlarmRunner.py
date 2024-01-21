@@ -5,7 +5,7 @@ import numpy as np
 import pygame
 import os
 import json
-from PushUpCounter import PushUpCounter
+from PushUpCounter import PushUpAndSquatCounter
 
 pygame.init() # initialize pygame
 
@@ -38,7 +38,7 @@ if (alarm_sound != ""):
 
     if extreme_mode:
         print("extreme mode")
-        PushUpCounter.start_pushup_counter(extreme_mode)
+        PushUpAndSquatCounter.start_pushup_counter(extreme_mode)
         
         # stop alarm sound
         song.stop()
