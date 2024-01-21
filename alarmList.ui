@@ -156,7 +156,7 @@ color: rgb(255, 255, 255);</string>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
-           <verstretch>1</verstretch>
+           <verstretch>0</verstretch>
           </sizepolicy>
          </property>
         </widget>
@@ -174,7 +174,7 @@ color: rgb(255, 255, 255);</string>
            <widget class="QLabel" name="label_9">
             <property name="font">
              <font>
-              <pointsize>19</pointsize>
+              <pointsize>22</pointsize>
               <bold>true</bold>
              </font>
             </property>
@@ -1290,7 +1290,7 @@ border-color: rgb(0, 0, 0);</string>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
-           <verstretch>1</verstretch>
+           <verstretch>0</verstretch>
           </sizepolicy>
          </property>
         </widget>
