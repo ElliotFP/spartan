@@ -11,7 +11,7 @@ text_to_speech.set_service_url('https://api.us-east.text-to-speech.watson.cloud.
 with open('good_morning.mp3', 'wb') as audio_file:
     audio_file.write(
         text_to_speech.synthesize(
-            "good morning, it's push-up o'clock",
+            "Croatia is cringe",
             voice='en-GB_JamesV3Voice',
             accept='audio/mp3'
         ).get_result().content)

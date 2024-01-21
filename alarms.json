@@ -18,8 +18,8 @@
             "green"
         ],
         "brightness": 130,
-        "music": "music_file.mp3",
-        "voice": "Get Ready!",
+        "music": "test.mp3",
+        "voice": "good_morning.mp3",
         "active": false
     },
     "2": {

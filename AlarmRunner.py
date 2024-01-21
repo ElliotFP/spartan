@@ -4,27 +4,29 @@ import mediapipe as mp
 import numpy as np
 import pygame   
 import os
+import json
 from PushUpCounter import PushUpCounter
 
 pygame.init() # initialize pygame
 
+# read json file for settings
+with open("alarms.json") as json_file:
+    data = json.load(json_file)
 
-extreme_mode = sys.argv[1] # 0 for normal, 1 for extreme
-print("extreme_mode is" + extreme_mode)
+json_num = sys.argv[1] # int for alarm number
 
-lights_brightness = sys.argv[2] # int for brightness level
-lights_color = sys.argv[3] # int for color
-lights_mode = sys.argv[4] # int for mode
-print("lights_brightness is " + lights_brightness + ", lights_color is " + lights_color + ", lights_mode is " + lights_mode)
 
-alarm_sound = sys.argv[5] # string for .mp3 file
-print("alarm_sound is " + alarm_sound)
-
-speech_text = sys.argv[6] # string for text to speech
-print("speech_text is " + speech_text)
+extreme_mode = data[json_num]["extreme"] # number of pushups
+lights_brightness = data[json_num]["brightness"] # int for brightness
+lights_color = data[json_num]["colors"] # string for color
+alarm_sound = data[json_num]["music"] # string for alarm sound
+speech_text = data[json_num]["voice"] # string for speech text
 
 if (alarm_sound != ""):
     print("alarm sound is " + alarm_sound)
+
+    if (speech_text != ""):
+        print("speech text is " + speech_text)
     
     # play alarm sound
     if (os.path.isfile(alarm_sound)):
@@ -32,13 +34,11 @@ if (alarm_sound != ""):
         song.play()
     elif (os.path.isdir(alarm_sound)):
         print("alarm sound is a directory")
-
         # play all .mp3 files in directory
 
     if extreme_mode:
         print("extreme mode")
-        num_pushups = int(sys.argv[7]) # int for number of pushups
-        PushUpCounter.start_pushup_counter(num_pushups)
+        PushUpCounter.start_pushup_counter(extreme_mode)
         
         # stop alarm sound
         song.stop()
