@@ -1,5 +1,5 @@
 {
-    "numberOfAlarms": 3,
+    "numberOfAlarms": 4,
     "0": {
         "time": "09:00:00",
         "extreme": 15,
@@ -9,28 +9,45 @@
         "brightness": 130,
         "music": "music_file.mp3",
         "voice": "Get Ready!",
-        "active": false
+        "active": true
     },
     "1": {
-        "time": "09:00:00",
-        "extreme": 15,
+        "time": "00:25",
+        "extreme": 10,
         "colors": [
-            "green"
+            "blue",
+            "red",
+            "yellow"
         ],
-        "brightness": 130,
-        "music": "test.mp3",
-        "voice": "good_morning.mp3",
-        "active": false
+        "brightness": 40,
+        "music": null,
+        "voice": "Hello, my name is Jeff.",
+        "active": true
     },
     "2": {
-        "time": "09:00:00",
-        "extreme": 15,
+        "time": "07:00",
+        "extreme": 0,
         "colors": [
-            "green"
+            "orange",
+            "blue",
+            "yellow"
         ],
-        "brightness": 130,
-        "music": "music_file.mp3",
-        "voice": "Get Ready!",
-        "active": false
+        "brightness": 40,
+        "music": null,
+        "voice": "",
+        "active": true
+    },
+    "3": {
+        "time": "07:00",
+        "extreme": 0,
+        "colors": [
+            "orange",
+            "blue",
+            "yellow"
+        ],
+        "brightness": 40,
+        "music": null,
+        "voice": "",
+        "active": true
     }
 }

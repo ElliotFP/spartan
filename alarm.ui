@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1001</width>
-    <height>602</height>
+    <height>616</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -366,7 +366,7 @@ background-color: rgb(255, 255, 255);</string>
                </property>
                <layout class="QGridLayout" name="gridLayout_8">
                 <item row="0" column="0">
-                 <widget class="QTimeEdit" name="timeEdit_2">
+                 <widget class="QTimeEdit" name="time">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -1165,7 +1165,7 @@ background-color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item>
-              <widget class="QPlainTextEdit" name="voiceText">
+              <widget class="QPlainTextEdit" name="voiceTxt">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(245, 247, 248);
 color: rgb(36, 31, 49);</string>

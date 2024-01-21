@@ -112,6 +112,7 @@ class NewAlarm(QMainWindow):
         self.isYellow = False
         self.isBrown = False
         self.btnAlarms.clicked.connect(self.backToAlarms)
+        self.btnSubmit.clicked.connect(self.submit)
         self.btnMusic.clicked.connect(self.selectMusic)
         self.btnOrange.clicked.connect(self.orange)
         self.btnGreen.clicked.connect(self.green)
@@ -124,6 +125,44 @@ class NewAlarm(QMainWindow):
     def backToAlarms(self):
         alarmListWidget.refresh()
         widget.setCurrentIndex(0)
+    
+    def getColors(self):
+        colors = []
+        if self.isOrange:
+            colors.append('orange')
+        if self.isGreen:
+            colors.append('green')
+        if self.isBlue:
+            colors.append('blue')
+        if self.isRed:
+            colors.append('red')
+        if self.isYellow:
+            colors.append('yellow')
+        if self.isBrown:
+            colors.append('brown')
+        return colors
+    
+
+    def submit(self):
+        if alarmListWidget.numberOfAlarms == 4:
+            return
+        with open('alarms.json') as f:
+            self.alarmList = json.load(f)
+        self.numberOfAlarms = self.alarmList['numberOfAlarms']
+        self.alarmList[str(self.numberOfAlarms)] = {
+            'time': self.time.time().toString('hh:mm'),
+            'extreme': self.extremeBox.value(),
+            'colors': self.getColors(),
+            'brightness': self.brightnessSlider.value(),
+            'music': self.fileDir,
+            'voice': self.voiceTxt.toPlainText(),
+            'active': True
+        }
+        self.numberOfAlarms += 1
+        self.alarmList['numberOfAlarms'] = self.numberOfAlarms
+        with open('alarms.json', 'w') as f:
+            json.dump(self.alarmList, f, indent=4)
+        self.backToAlarms()
     
     def selectMusic(self):
         self.file_name = QFileDialog.getOpenFileName()
